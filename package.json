@@ -21,7 +21,8 @@
     "prepush": "npm test",
     "prepublish": "npm run lint && flow && npm test && npm run build && npm run copy-flow-files",
     "open:coverage": "open coverage/lcov-report/index.html",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "start": "defaultenv ../pason-power/env/dev.js ../pason-power/env/local.js -- babel-node start.js"
   },
   "config": {
     "mocha": "--compilers js:babel-core/register ./test/**/*.js",
@@ -80,5 +81,12 @@
     "rimraf": "^2.6.0",
     "semantic-release": "^6.3.6",
     "validate-commit-msg": "^2.11.1"
+  },
+  "dependencies": {
+    "babel-generator": "^6.26.0",
+    "babel-template": "^6.26.0",
+    "babel-types": "^6.26.0",
+    "lodash.camelcase": "^4.3.0",
+    "lodash.upperfirst": "^4.3.1"
   }
 }
